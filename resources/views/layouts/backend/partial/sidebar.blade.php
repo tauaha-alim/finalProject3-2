@@ -1,18 +1,13 @@
 <div data-active-color="white" data-background-color="black" data-image="../app-assets/img/sidebar-bg/01.jpg" class="app-sidebar">
         <div class="sidebar-header">
           <div class="logo clearfix"><a href="index-2.html" class="logo-text float-left">
-              <div class="logo-img"><img src="../app-assets/img/logo.png" alt="Convex Logo"/></div><span class="text align-middle">CONVEX</span></a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i data-toggle="expanded" class="ft-disc toggle-icon"></i></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-circle"></i></a></div>
+              <div class="logo-img"><img src="{{url('backend/img/logo.png')}}" alt="Convex Logo"/></div><span class="text align-middle">CONVEX</span></a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i data-toggle="expanded" class="ft-disc toggle-icon"></i></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-circle"></i></a></div>
         </div>
         <div class="sidebar-content">
           <div class="nav-container">
             <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
               <li class="has-sub nav-item"><a href="#"><i class="icon-home"></i><span data-i18n="" class="menu-title">Dashboard</span><span class="tag badge badge-pill badge-danger mt-1">2</span></a>
-                <ul class="menu-content">
-                  <li class="active"><a href="dashboard-ecommerce.html" class="menu-item">eCommerce</a>
-                  </li>
-                  <li><a href="dashboard-analytics.html" class="menu-item">Analytics</a>
-                  </li>
-                </ul>
+              
               </li>
               <li class="has-sub nav-item"><a href="#"><i class="icon-screen-desktop"></i><span data-i18n="" class="menu-title">Apps</span></a>
                 <ul class="menu-content">
