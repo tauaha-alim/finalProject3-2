@@ -706,6 +706,7 @@
                             <a href="#">
                                 <img src="{{asset('frontend/images/partner-logo-5.png')}}" alt="standell">
                                 <img src="{{asset('frontend/images/partner-logo-5-hover.png')}}" alt="standell">
+                                
                             </a>
                         </div>
 
