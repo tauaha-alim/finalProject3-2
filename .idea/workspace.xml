@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87e77bb0-5689-47e1-bd59-61550253fa0d" name="Default Changelist" comment="sd">
-      <change beforePath="$PROJECT_DIR$/.idea/finalProject3-2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/finalProject3-2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="87e77bb0-5689-47e1-bd59-61550253fa0d" name="Default Changelist" comment="sd" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="708" selection-start-line="708" selection-end-line="708" />
+            <state relative-caret-position="214">
+              <caret line="711" lean-forward="true" selection-start-line="711" selection-end-line="711" />
             </state>
           </provider>
         </entry>
@@ -282,7 +277,7 @@
       <updated>1550526303718</updated>
       <workItem from="1550526307922" duration="8369000" />
       <workItem from="1550598883192" duration="630000" />
-      <workItem from="1550862698713" duration="1476000" />
+      <workItem from="1550862698713" duration="1979000" />
     </task>
     <task id="LOCAL-00001" summary="Frontend">
       <created>1550534083075</created>
@@ -302,10 +297,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10475000" />
+    <option name="totallyTimeSpent" value="10978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
@@ -313,7 +309,7 @@
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32838285" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="2" side_tool="true" visible="true" weight="0.32838285" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32838285" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32838285" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
@@ -388,8 +384,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="708" selection-start-line="708" selection-end-line="708" />
+        <state relative-caret-position="214">
+          <caret line="711" lean-forward="true" selection-start-line="711" selection-end-line="711" />
         </state>
       </provider>
     </entry>
