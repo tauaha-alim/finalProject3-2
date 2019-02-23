@@ -2,10 +2,7 @@
 @push('css')
 @endpush
 @section('content')
-<div class="main-panel">
-  <div class="main-content">
-    <div class="content-wrapper">
-      <div class="container-fluid"><!--Statistics cards Starts-->
+
       <div class="row">
         <div class="col-xl-4 col-lg-6 col-md-6 col-12">
           <div class="card bg-white">

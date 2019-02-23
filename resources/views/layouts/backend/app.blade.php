@@ -39,9 +39,15 @@
 
       @include('layouts.backend.partial.topbar')
 
-      @yield('content')
+        <div class="main-panel">
+            <div class="main-content">
+                <div class="content-wrapper">
+                    <div class="container-fluid">
+                        @yield('content')
+                       </div>
+                </div>
+            </div>
 
-   
 
       @include('layouts.backend.partial.footer')
 
@@ -71,6 +77,90 @@
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="{{asset('backend/js/dashboard-ecommerce.js')}}"></script>
     <!-- END PAGE LEVEL JS-->
+
+
+    <script src="{{asset('backend/js/sweetalert.js')}}"></script>
+    @if(Session::has('ttitle'))
+        <script>
+            swal({
+                title: "{{session('ttitle')}}",
+                text: "{{session('tmsg')}}",
+                icon: "{{session('ticon')}}",
+                button: "Ok!",
+            }).then((value) => {
+                window.location.reload();
+            })
+        </script>
+    @endif
+
+
+    <script>
+        $(document).on('click', '.DeleteContent', function() {
+            var sname=$(this).data('name');
+            var urlEx=$(this).data('url');
+            swal({
+                title: "Delete "+sname+"?",
+                text: "Once deleted, you will not be able to recover this data!",
+                icon: "error",
+                buttons: true,
+                dangerMode: true,
+            })
+
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            type: 'post',
+                            url: urlEx,
+                            data: {
+                                '_token': $('input[name=_token]').val(),
+                                'id': $(this).data('id'),
+                                'picture': $(this).data('pic'),
+                            },
+
+                            success: function(data) {
+                                swal("Poof! This data has been deleted!")
+                                    .then((value) => {
+                                        location.reload();
+                                    });
+
+                            }
+                        });
+
+
+                    } else {
+                        swal("This data is safe!");
+                    }
+                });
+        });
+    </script>
+
+
+    <script>
+
+
+        $(document).on('click', '.showDescription', function() {
+            var desc=$(this).data('description');
+            swal({
+                title: "Description",
+                text: desc,
+                icon: "warning",
+            })
+
+        });
+
+    </script>
+
+
+
+
+
+
+    <script>
+        $('#ButtonRefresh').click(function(){
+            location.reload();
+
+        });
+    </script>
 
 
     @stack('js')
