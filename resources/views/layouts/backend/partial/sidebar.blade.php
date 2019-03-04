@@ -22,6 +22,10 @@
 
               <li class="{{Request::is('admin/course*') ? 'active' : ''}}"><a href="{{route('admin.course.index')}}"><i class="fa fa-book" aria-hidden="true"></i><span data-i18n="" class="menu-title">Course</span></a>
               </li>
+                <li class="{{Request::is('admin/batch*') ? 'active' : ''}}"><a href="{{route('admin.batch.index')}}"><i class="fa fa-book" aria-hidden="true"></i><span data-i18n="" class="menu-title">Batch</span></a>
+                </li>
+                <li class="{{Request::is('admin/student*') ? 'active' : ''}}"><a href="{{route('admin.student.index')}}"><i class="fa fa-users" aria-hidden="true"></i><span data-i18n="" class="menu-title">Student's</span></a>
+                </li>
 
 
 

@@ -109,7 +109,7 @@ class CourseController extends Controller
         //
     }
 
-    public function deletecourse(Request $request){
+    public function deleteBatch(Request $request){
 
         Course::find ( $request->id )->delete ();
 

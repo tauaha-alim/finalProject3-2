@@ -29,6 +29,17 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('course','CourseController');
     Route::post('/deletecourse','CourseController@deletecourse');
 
+    //batch related Route
+    Route::resource('batch','BatchController');
+    Route::post('/deleteBatch','BatchController@deleteBatch');
+
+    //student Related route
+    Route::get('student','StudentController@index')->name('student.index');
+    Route::get('student/create','StudentController@create')->name('student.create');
+    Route::get('get-state-list','StudentController@getStateList');
+    Route::post('student/store','StudentController@store')->name('student.store');
+    Route::post('/deleteStudent','StudentController@delete');
+
 
 
 });
