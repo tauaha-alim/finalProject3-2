@@ -38,7 +38,10 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::get('student/create','StudentController@create')->name('student.create');
     Route::get('get-state-list','StudentController@getStateList');
     Route::post('student/store','StudentController@store')->name('student.store');
+    Route::get('student/edit/{id}','StudentController@edit')->name('student.edit');
+    Route::put('student/update/{id}','StudentController@update')->name('student.update');
     Route::post('/deleteStudent','StudentController@delete');
+    Route::get('/student/search', 'StudentController@indexstudentInformationSearch')->name('searchStudent');
 
 
 
