@@ -45,4 +45,31 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 
 
 
+
+
+
+
+
+    
+    //    Investment
+    Route::resource('investment','InvestmentController');
+    Route::post('/deleteInvestment','InvestmentController@deleteInvestor');
+
+
+    //    Project
+    Route::resource('project','ProjectController');
+    Route::post('/deleteProject','ProjectController@deleteProject');
+
+
+    //    testimonial
+    Route::resource('testimonial','TestimonialController');
+    Route::post('/deleteTestimonial','TestimonialController@deletetestimonial');
+
+
+
+
+
+
+
+
 });

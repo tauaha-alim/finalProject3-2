@@ -29,6 +29,32 @@
 
 
 
+                <li class="has-sub nav-item"><a href="#"><i class="icon-screen-desktop"></i><span data-i18n="" class="menu-title">Investor</span></a>
+                    <ul class="menu-content">
+                        <li ><a href="{{route('admin.investment.create')}}" class="menu-item">Add Investor</a></li>
+                        <li><a href="{{route('admin.investment.index')}}" class="menu-item">All Investor</a></li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="has-sub nav-item"><a href="#"><i class="icon-screen-desktop"></i><span data-i18n="" class="menu-title">Project</span></a>
+                    <ul class="menu-content">
+                        <li ><a href="{{route('admin.project.create')}}" class="menu-item">Add Project</a></li>
+                        <li><a href="{{route('admin.project.index')}}" class="menu-item">All Project</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="has-sub nav-item"><a href="#"><i class="icon-screen-desktop"></i><span data-i18n="" class="menu-title">Testimonial</span></a>
+                    <ul class="menu-content">
+                        <li ><a href="{{route('admin.testimonial.create')}}" class="menu-item">Add Testimonial</a></li>
+                        <li><a href="{{route('admin.testimonial.index')}}" class="menu-item">All Testimonial</a></li>
+                    </ul>
+                </li>
+
 
 
 

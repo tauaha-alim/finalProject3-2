@@ -132,7 +132,62 @@
                     }
                 });
         });
+
+
+
+
+
+
+        $(document).on('click', '.deletetestimonial', function() {
+            var sname=$(this).data('name');
+            var urlEx=$(this).data('url');
+            swal({
+                title: "Delete "+sname+"?",
+                text: "Once deleted, you will not be able to recover this data!",
+                icon: "error",
+                buttons: true,
+                dangerMode: true,
+            })
+
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            type: 'post',
+                            url: urlEx,
+                            data: {
+                                '_token': $('input[name=_token]').val(),
+                                'id': $(this).data('id'),
+                                'picture': $(this).data('pic'),
+                            },
+
+                            success: function(data) {
+                                swal("Poof! This data has been deleted!")
+                                    .then((value) => {
+                                        location.reload();
+                                    });
+
+                            }
+                        });
+
+
+                    } else {
+                        swal("This data is safe!");
+                    }
+                });
+        });
+
+
+        
     </script>
+
+
+
+
+
+
+
+
+
 
 
     <script>
