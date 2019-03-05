@@ -269,31 +269,35 @@ class StudentController extends Controller
 
     public function indexstudentInformationSearch()
     {
-        //
-        // where('isActive','Active')
-        $q = Input::get ( 'q' );
-        if($q != ""){
-            $data = Student::
-            where(function ($logic) {
-                $logic->where ( 'student_name', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
-                    ->orWhere ( 'batch_id', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
+       
+         $q = Input::get ( 'q' );
+    if($q != ""){
+    $data = Student::
+        join('courses', 'students.course_id', '=', 'courses.id')
+        ->join('batches', 'students.batch_id', '=', 'batches.id')
+    ->where(function ($search) {
+    $search->where ( 'students.student_name', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
+    
+    ->orWhere ( 'students.mobile', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
+    ->orWhere ( 'students.email', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
+    ->orWhere ( 'courses.course_name', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
+    ->orWhere ( 'batches.batch_name', 'LIKE', '%' . Input::get ( 'q' ) . '%' );
+    
+    
+})->select(
+                'students.*',
+                
+                'courses.*',
+                'batches.*'
 
-                    ->orWhere ( 'course_id', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
-
-
-                    ->orWhere ( 'mobile', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
-                    ->orWhere ( 'email', 'LIKE', '%' . Input::get ( 'q' ) . '%' );
-
-
-            })->paginate (10)->setPath ( '' );
-            $pagination = $data->appends ( array (
-                'q' => Input::get ( 'q' )
-            ) );
-            if (count ( $data ) > 0)
-                return view ( 'admin.student.index' )->withDetails ( $data )->withQuery ( $q );
-        }
+                )->paginate (10)->setPath ( '' );
+    $pagination = $data->appends ( array (
+                'q' => Input::get ( 'q' ) 
+        ) );
+   if (count ( $data ) > 0)
+        return view ( 'admin.student.index' )->withDetails ( $data )->withQuery ( $q );
+    }
         return view ( 'admin.student.index')->withMessage ( 'No Details found. Try to search again !' );
-
     }
 
 

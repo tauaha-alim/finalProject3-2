@@ -22,13 +22,13 @@ class CreateStudentsTable extends Migration
             $table->string('mother_name');
             $table->string('present_address');
             $table->string('permanent_address');
-            $table->string('	email');
+            $table->string('email');
             $table->string('gender');
             $table->string('blood_group')->nullable();
             $table->string('religion');
             $table->string('institute');
             $table->string('date_of_birth');
-            $table->string('	nationality');
+            $table->string('nationality');
             $table->BigInteger('national_id');
             $table->string('image')->default('default.png');
             $table->string('mobile');
