@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class StudentController extends Controller
 {
@@ -179,25 +180,24 @@ class StudentController extends Controller
 
         $student =  Student::find($id);
 
-        if($request->hasFile('image')){
-            $url="storage/student/";
-            $image_path=$url.$student->image;
-            unlink($image_path );
+        $image = $request->file('image');
+        $slug = str_slug($request->student_name);
+        if (isset($image)){
+            $currentDate = Carbon::now()->toDateString();
+            $imagename = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+            if(!Storage::disk('public')->exists('student')){
+                Storage::disk('public')->makeDirectory('student');
 
-            //file name with extension
-            $fileNameWithExt = $request->file('image')->getClientOriginalName();
-            //get just file name
-            $fileName = pathinfo($fileNameWithExt,PATHINFO_FILENAME);
-            //GET JUST EXT
-            $extension = $request->file('image')->getClientOriginalExtension();
-            //file name to store
-            $fileNameToStore = $fileName.'_'.time().'.'.$extension;
 
-            //Upload Image
-            $path = $request->file('image')->storeAs('public/student/',$fileNameToStore);
-
-        }else{
-            $fileNameToStore =$student->image;
+            }
+            if (Storage::disk('public')->exists('student/'.$student->image)){
+                Storage::disk('public')->delete('student/'.$student->image);
+            }
+            $studentImage = Image::make($image)->resize(500,500)->stream();
+            Storage::disk('public')->put('student/'.$imagename ,$studentImage);
+        }
+        else{
+            $imagename = $student->image;
         }
 
         $DataExist4 =Student::select('id')
@@ -233,7 +233,7 @@ class StudentController extends Controller
         $student->national_id = $request->national_id;
         $student->guardians_phone = $request->guardians_phone;
         $student->payment = $request->payment;
-        $student->image = $fileNameToStore;
+        $student->image = $imagename;
         $student->save();
         $notification = array(
             'ttitle' => 'Student Successfully Update',
