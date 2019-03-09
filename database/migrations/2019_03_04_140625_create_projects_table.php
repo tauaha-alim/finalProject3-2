@@ -21,7 +21,7 @@ class CreateProjectsTable extends Migration
             $table->string('end_time')->nullable();
             $table->string('project_expanse')->nullable();
             $table->string('project_profit')->nullable();
-            $table->string('project_income')->nullable();
+            $table->string('amount')->nullable();
             $table->string('option')->nullable();
             $table->timestamps();
         });

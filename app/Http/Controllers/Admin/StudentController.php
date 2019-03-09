@@ -106,7 +106,7 @@ class StudentController extends Controller
         $student->institute = $request->institute;
         $student->national_id = $request->national_id;
         $student->guardians_phone = $request->guardians_phone;
-        $student->payment = $request->payment;
+        $student->amount = $request->payment;
         $student->image = $fileNameToStore;
         $student->save();
         $notification = array(
@@ -232,7 +232,7 @@ class StudentController extends Controller
         $student->institute = $request->institute;
         $student->national_id = $request->national_id;
         $student->guardians_phone = $request->guardians_phone;
-        $student->payment = $request->payment;
+        $student->amount = $request->payment;
         $student->image = $imagename;
         $student->save();
         $notification = array(

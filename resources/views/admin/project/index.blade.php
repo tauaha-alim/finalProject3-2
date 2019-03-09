@@ -14,11 +14,11 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{route('admin.investment.create')}}" class="btn btn-primary">Add Investor</a>
+                        <a href="{{route('admin.project.create')}}" class="btn btn-primary">Add Project</a>
                         <br>
                         <br>
                         <div class="card-title-wrap bar-success">
-                            <h4 class="card-title">All Investor</h4>
+                            <h4 class="card-title">All Project</h4>
                         </div>
                     </div>
                     <div class="card-body">
@@ -46,9 +46,12 @@
                                     <td>{{$value->total_price}}</td>
                                     <td>{{$value->start_time}}</td>
                                     <td>{{$value->end_time}}</td>
-                                    <td>{{$value->project_income}}</td>
+                                    <td>{{$value->amount}}</td>
                                     <td>{{$value->project_expanse}}</td>
-                                    <td>{{$value->project_profit}}</td>
+                                    @php
+                                    $total_profit = $value->amount - $value->project_expanse
+                                    @endphp
+                                    <td>{{$total_profit}}</td>
                                     <td>
                                         <a class="success p-0" href="{{route('admin.project.edit',$value->id)}}" data-original-title="" title="">
                                             <i class="fa fa-pencil font-medium-3 mr-2"></i>

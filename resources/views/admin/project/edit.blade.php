@@ -118,17 +118,7 @@
 
 
 
-                                <div class="form-group row">
-                                    {{ Form::label('project_profit', 'project_profit',['class' => 'col-md-3 label-control']) }}
-                                    <div class="col-md-9">
-                                        {{ Form::number('project_profit',$data->project_profit, array('class' => 'form-control','min'=>'0','required'=>'','placeholder'=>'project_profit')) }}
-                                        @if (count($errors) > 0)
-                                            <span style="color:red">
-                                                       {!! $errors->first('project_profit') !!}
-                                                </span>
-                                        @endif
-                                    </div>
-                                </div>
+                             
 
 
                             </div>

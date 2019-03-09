@@ -29,7 +29,7 @@
 
 
 
-                <li class="has-sub nav-item"><a href="#"><i class="icon-screen-desktop"></i><span data-i18n="" class="menu-title">Investor</span></a>
+                <li class="has-sub nav-item"><a href="#"><i class="fa fa-building" aria-hidden="true"></i><span data-i18n="" class="menu-title">Investor</span></a>
                     <ul class="menu-content">
                         <li ><a href="{{route('admin.investment.create')}}" class="menu-item">Add Investor</a></li>
                         <li><a href="{{route('admin.investment.index')}}" class="menu-item">All Investor</a></li>
@@ -39,7 +39,7 @@
 
 
 
-                <li class="has-sub nav-item"><a href="#"><i class="icon-screen-desktop"></i><span data-i18n="" class="menu-title">Project</span></a>
+                <li class="has-sub nav-item"><a href="#"><i class="fa fa-briefcase" aria-hidden="true"></i><span data-i18n="" class="menu-title">Project</span></a>
                     <ul class="menu-content">
                         <li ><a href="{{route('admin.project.create')}}" class="menu-item">Add Project</a></li>
                         <li><a href="{{route('admin.project.index')}}" class="menu-item">All Project</a></li>
@@ -48,11 +48,16 @@
 
 
 
-                <li class="has-sub nav-item"><a href="#"><i class="icon-screen-desktop"></i><span data-i18n="" class="menu-title">Testimonial</span></a>
+                <li class="has-sub nav-item"><a href="#"><i class="fa fa-certificate" aria-hidden="true"></i><span data-i18n="" class="menu-title">Testimonial</span></a>
                     <ul class="menu-content">
                         <li ><a href="{{route('admin.testimonial.create')}}" class="menu-item">Add Testimonial</a></li>
                         <li><a href="{{route('admin.testimonial.index')}}" class="menu-item">All Testimonial</a></li>
                     </ul>
+                </li>
+
+                  <li class="{{Request::is('admin/chart*') ? 'active' : ''}}"><a href="{{route('admin.chart')}}"><i class="fa fa-users" aria-hidden="true"></i><span data-i18n="" class="menu-title" style="font-size: 12px"> Project Amount Chart</span></a>
+                </li>
+                 <li class="{{Request::is('admin/payment_chart*') ? 'active' : ''}}"><a href="{{route('admin.student_chart')}}"><i class="fa fa-graduation-cap" aria-hidden="true"></i></i><span data-i18n="" class="menu-title" style="font-size: 12px"> Student Payment Chart</span></a>
                 </li>
 
 

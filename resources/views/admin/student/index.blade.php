@@ -92,9 +92,9 @@
                                         <td>{{$student->student_name}}</td>
                                         <td>{{$student->course->course_name}}</td>
                                         <td>{{$student->batch->batch_name}}</td>
-                                        <td>{{$student->payment}}</td>
+                                        <td>{{$student->amount}}</td>
                                         @php
-                                            $total_due = $student->course->price - $student->payment
+                                            $total_due = $student->course->price - $student->amount
                                         @endphp
 
                                         <td>{{$total_due}}</td>
@@ -134,9 +134,9 @@
                                             <td>{{$student->student_name}}</td>
                                             <td>{{$student->course->course_name}}</td>
                                             <td>{{$student->batch->batch_name}}</td>
-                                            <td>{{$student->payment}}</td>
+                                            <td>{{$student->amount}}</td>
                                             @php
-                                                $total_due = $student->course->price - $student->payment
+                                                $total_due = $student->course->price - $student->amount
                                             @endphp
 
                                             <td>{{$total_due}}</td>

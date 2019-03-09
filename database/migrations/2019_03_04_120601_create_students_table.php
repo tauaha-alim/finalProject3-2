@@ -33,7 +33,7 @@ class CreateStudentsTable extends Migration
             $table->string('image')->default('default.png');
             $table->string('mobile');
             $table->string('guardians_phone');
-            $table->integer('payment');
+            $table->integer('amount');
 
             $table->foreign('batch_id')->references('id')->on('batches')->onDelete('cascade');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');

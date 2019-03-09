@@ -44,7 +44,7 @@ class ProjectController extends Controller
             'total_price' => 'required',
             'start_time' => 'required',
             'project_expanse' => 'required',
-            'project_profit' => 'required',
+           
             'project_income' => 'required',
         ]);
 
@@ -55,8 +55,7 @@ class ProjectController extends Controller
         $courses->start_time = $request->start_time ;
         $courses->end_time = $request->end_time;
         $courses->project_expanse = $request->project_expanse;
-        $courses->project_profit = $request->project_profit;
-        $courses->project_income = $request->project_income;
+        $courses->amount = $request->project_income;
         $courses->save();
 
         $notification = array(
@@ -106,7 +105,6 @@ class ProjectController extends Controller
             'total_price' => 'required',
             'start_time' => 'required',
             'project_expanse' => 'required',
-            'project_profit' => 'required',
             'project_income' => 'required',
         ]);
 
@@ -117,8 +115,7 @@ class ProjectController extends Controller
         $courses->start_time = $request->start_time ;
         $courses->end_time = $request->end_time;
         $courses->project_expanse = $request->project_expanse;
-        $courses->project_profit = $request->project_profit;
-        $courses->project_income = $request->project_income;
+        $courses->amount = $request->project_income;
         $courses->save();
 
         $notification = array(

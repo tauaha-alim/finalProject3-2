@@ -67,6 +67,16 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 
 
 
+    //chart
+    Route::get('/chart', 'ChartController@index')->name('chart');
+    Route::get('/chart/{year}', 'ChartController@GetYearlyBalanceSheet');
+
+    Route::get('/payment_chart', 'ChartController@student_chart')->name('student_chart');
+    Route::get('/payment_chart/{year}', 'ChartController@student_chart_year');
+
+
+
+
 
 
 
