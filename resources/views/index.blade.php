@@ -1,7 +1,11 @@
 @extends('frontend.layout.app')
 
 
+
 @section('content')
+
+
+
     <div class="flat-quote style1">
         <div class="container">
             <div class="row">

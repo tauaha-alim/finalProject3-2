@@ -76,10 +76,12 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 
 
 
-
-
-
-
-
-
 });
+
+Route::resource('pages','PagesController');
+
+Route::post('/passGate','PagesController@LoginPassGate')->name('loginPassGateRoute');
+
+Route::get('/destroyLoggedMan','PagesController@loggedManDestroy')->name('destroyLoggedMan');
+
+Route::get('/liveChatPage','PagesController@liveChatPage')->name('liveChatPage');

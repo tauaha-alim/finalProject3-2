@@ -8,6 +8,15 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/stylesheet/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/stylesheet/responsive.css')}}">
     <link href="{{asset('frontend/images/favicon.ico')}}" rel="shortcut icon">
+    <style>
+        @media (min-width: 576px) {
+            .modal-dialog {
+                max-width: 500px !important;
+                margin: 7.75rem auto !important;
+            }
+        }
+    </style>
+
 </head>
 <body>
 <div id="loading-overlay">
@@ -29,12 +38,113 @@
 
             <div class="col-lg-4 col-sm-12">
                 <div class="flat-user-section style1 text-right">
-                    <ul class="user-section">
-                        <li class="login"><a href="#">Login</a></li>
-                        <li class="cart"><a href="#">Cart (0)</a></li>
-                    </ul>
+
+                        <ul class="user-section">
+                            @if(!session('loggedMan'))
+                                <li class="login" data-toggle="modal" data-target="#exampleModalCenterLogin"><a style="cursor: pointer">Login</a></li>
+                                <li class="login" data-toggle="modal" data-target="#exampleModalCenter"><a style="cursor: pointer">Register</a></li>
+                                @else
+                                <li class="login" ><a href="{{route('destroyLoggedMan')}}">Logout</a></li>
+                            @endif
+
+                        </ul>
+
+
+
+
+
                 </div><!-- /.flat-user-section -->
             </div><!-- /.col-md-6 -->
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenterLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form action="{{route('loginPassGateRoute')}}" method="post">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="input-wrap-name wrap-input">
+                                    <input type="text" class="name" name="email" required="" placeholder="Enter Email">
+                                </div>
+                                <div class="input-wrap-mail wrap-input">
+                                    <input type="password" name="password" required="" placeholder="Enter Password">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Registration</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form action="{{route('pages.store')}}" method="post">
+                            @csrf
+                        <div class="modal-body">
+                            <div class="row-input-wrap">
+                                <div class="input-wrap-name wrap-input">
+                                    <input type="text" class="name" name="name" required="" placeholder="Your Name">
+                                </div>
+                                <div class="input-wrap-mail wrap-input">
+                                    <input type="text" name="username" required="" placeholder="Username">
+                                </div>
+
+                                <div class="input-wrap-mail wrap-input">
+                                    <input type="password" name="password" required="" placeholder="Enter Password">
+                                </div>
+                                <div class="input-wrap-mail wrap-input">
+                                    <input type="email" name="email" class="mail" required="" placeholder="Your Email">
+                                </div>
+                                <div class="input-wrap-mail wrap-input">
+                                    <input type="number" name="phone"  required="" placeholder="Phone Number">
+                                </div>
+                                <div class="input-wrap-mail wrap-input">
+                                    <input type="text" name="address" class="mail" required="" placeholder="Address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-info">Register</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div> <!-- /.row -->
     </div> <!-- /.container -->
@@ -46,75 +156,39 @@
             <div class="col-md-12" >
                 <div class="header-wrap clearfix">
                     <div id="logo">
-                        <a href="index-2.html"><img src="{{asset('frontend/images/logo.png')}}" alt="logo" width="128" height="26" data-retina="images/logo-2x.png" data-width="128" data-height="26"></a>
+                        <a href="/"><img src="{{asset('frontend/images/logo.png')}}" alt="logo" width="128" height="26" data-retina="images/logo-2x.png" data-width="128" data-height="26"></a>
                     </div> <!-- /#logo -->
 
                     <div class="mobile-button">
                         <span></span>
                     </div>
 
-                    <div class="btn-quote btn btn-styl2">
-                        <a href="#">GET A QUOTE</a>
-                    </div>
+            @if(session('loggedMan'))
+                        <div class="btn-quote btn btn-styl2">
+                            <a href="{{route('liveChatPage')}}">Live Chat</a>
+                        </div>
+                    @endif
 
                     <div class="nav-wrap">
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
                                 <li class="active">
-                                    <a href="#" title="">HOME</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index-2.html" title="">HOME 01</a></li>
-                                        <li><a href="index2.html" title="">HOME 02</a></li>
-                                        <li><a href="index3.html" title="">HOME 03</a></li>
-                                        <li><a href="index4.html" title="">HOME 04</a></li>
-                                        <li><a href="index5.html" title="">HOME 05</a></li>
-                                    </ul><!-- /.sub-menu -->
+                                    <a href="/" title="">HOME</a>
                                 </li>
                                 <li>
-                                    <a href="about.html" title="">ABOUT US</a>
+                                    <a href="" title="">ABOUT US</a>
                                 </li>
                                 <li>
                                     <a href="#" title="">SERVICE</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="service1.html" title="">SERVICE 01</a></li>
-                                        <li><a href="service2.html" title="">SERVICE 02</a></li>
-                                        <li><a href="service-detail.html" title="">SERVICE DETAIL</a></li>
-                                    </ul><!-- /.sub-menu -->
                                 </li>
                                 <li>
                                     <a href="#" title="">PROJECTS</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="projects1.html" title="">PROJECT (1)</a></li>
-                                        <li><a href="projects2.html" title="">PROJECT (2)</a></li>
-
-                                        <li><a href="project-detail.html" title="">PROJECT DETAIL</a></li>
-                                    </ul><!-- /.sub-menu -->
                                 </li>
                                 <li>
                                     <a href="#" title="">BLOG</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html" title="">BLOG</a></li>
-                                        <li><a href="blog-detail.html" title="">BLOG DETAIL</a></li>
-                                    </ul><!-- /.sub-menu -->
                                 </li>
                                 <li>
                                     <a href="#" title="">PAGE</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="FAQs.html" title="">FAQS</a></li>
-                                        <li><a href="error.html" title="">ERROR PAGE</a></li>
-                                    </ul><!-- /.sub-menu -->
-                                </li>
-                                <li>
-                                    <a href="shop.html" title="">SHOP</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="shop.html" title="">SHOP</a></li>
-                                        <li><a href="shop-detail.html" title="">SHOP DETAIL</a></li>
-                                        <li><a href="cart.html">SHOPPING CART</a></li>
-                                        <li><a href="checkout.html">CHECKOUT CART</a></li>
-                                    </ul><!-- /.sub-menu -->
-                                </li>
-                                <li>
-                                    <a href="contact-us.html">CONTACT</a>
                                 </li>
                             </ul><!-- /.menu -->
                         </nav> <!-- /#mainnav -->
@@ -126,9 +200,11 @@
     </div> <!-- container -->
 </header> <!-- /#header -->
 
-@include('frontend.inc.slider')
 
+@include('frontend.inc.slider')
 @yield('content')
+
+
 
 @include('frontend.inc.footer')
 
@@ -156,6 +232,29 @@
 <script src="{{asset('frontend/rev-slider/js/extensions/revolution.extension.parallax.min.js')}}"></script>
 <script src="{{asset('frontend/rev-slider/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
 <script src="{{asset('frontend/rev-slider/js/extensions/revolution.extension.video.min.js')}}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.2.6/dist/sweetalert2.all.min.js"></script>
+
+<script>
+    @if(session('PassSuccess'))
+    Swal.fire({
+        type: 'success',
+        title: 'Success!',
+        text: 'Successfully Logged in!',
+    });
+    @endif
+
+    @if(session('msg'))
+    Swal.fire({
+        type: 'error',
+        title: 'Oops...',
+        text: 'email or password does not match our records, try again!',
+        footer: '<a href>or please register then try again.</a>'
+    });
+    @endif
+</script>
+
+
 </body>
 
 </html>
