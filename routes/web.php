@@ -23,6 +23,12 @@ Route::get('/',function (){
     return view('index');
 })->name('index');
 
+
+Route::get('chatApps','ChatController@chat');
+Route::post('send','ChatController@send');
+
+
+
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth']], function () {
 
 	Route::get('/dashboard','DasboardController@dashboard')->name('dashboard');
