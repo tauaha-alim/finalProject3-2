@@ -61,7 +61,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
   },
   axisY :{
     includeZero: false,
-    prefix: "$"
+    prefix: ""
   },
   toolTip: {
     shared: true
@@ -76,7 +76,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
     type: "splineArea", 
     showInLegend: true,
     name: "Income",
-    yValueFormatString: "$#,##0",     
+    yValueFormatString: "#,##0 TK",     
     dataPoints: [
 
     @foreach($TransectionTrackIncome as $key)
@@ -90,7 +90,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
   {
     type: "splineArea", 
     showInLegend: true,
-    yValueFormatString: "$#,##0",      
+    yValueFormatString: "#,##0 TK",      
     name: "Expenses",
     dataPoints: [
     @foreach($TransectionTrackExpance as $key)
@@ -103,7 +103,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
   {
     type: "splineArea", 
     showInLegend: true,
-    yValueFormatString: "$#,##0",      
+    yValueFormatString: "#,##0 TK",      
     name: "Profit",
     dataPoints: [
     @foreach($TransectionTrackProfit as $key)
@@ -115,7 +115,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
   },
   {
     type: "splineArea", 
-    yValueFormatString: "$#,##0",      
+    yValueFormatString: "#,##0 TK",      
     name: "Loss",
     showInLegend: true,
     dataPoints: [

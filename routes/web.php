@@ -42,6 +42,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::put('student/update/{id}','StudentController@update')->name('student.update');
     Route::post('/deleteStudent','StudentController@delete');
     Route::get('/student/search', 'StudentController@indexstudentInformationSearch')->name('searchStudent');
+  
 
 
 
@@ -59,6 +60,10 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     //    Project
     Route::resource('project','ProjectController');
     Route::post('/deleteProject','ProjectController@deleteProject');
+
+      Route::get('/projectSearch/search', 'ProjectController@projectSearch')->name('projectSearch');
+
+    
 
 
     //    testimonial

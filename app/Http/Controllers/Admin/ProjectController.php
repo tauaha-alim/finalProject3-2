@@ -6,6 +6,7 @@ use App\Project;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class ProjectController extends Controller
 {
@@ -16,8 +17,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $project = Project::latest()->paginate(10);
-        return view('admin.project.index',compact('project'));
+        $data = Project::latest()->paginate(10);
+        return view('admin.project.index',compact('data'));
     }
 
     /**
@@ -132,5 +133,30 @@ class ProjectController extends Controller
     public function deleteProject(Request $request){
         Project::find ( $request->id )->delete ();
         return response ()->json ();
+    }
+
+     public function projectSearch()
+    {
+       
+         $q = Input::get ( 'q' );
+    if($q != ""){
+    $data = Project::
+       
+    where(function ($search) {
+    $search->where ( 'project_name', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
+    ->orwhere ( 'start_time', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
+    ->orwhere ( 'end_time', 'LIKE', '%' . Input::get ( 'q' ) . '%' )
+    
+;
+    
+    
+})->paginate (10)->setPath ( '' );
+    $pagination = $data->appends ( array (
+                'q' => Input::get ( 'q' ) 
+        ) );
+   if (count ( $data ) > 0)
+        return view ( 'admin.project.index' )->withDetails ( $data )->withQuery ( $q );
+    }
+        return view ( 'admin.project.index')->withMessage ( 'No Details found. Try to search again !' );
     }
 }
