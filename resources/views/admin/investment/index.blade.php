@@ -30,11 +30,11 @@
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Invest Amount</th>
-                                    <th>PHONE</th>
-                                    <th>EMAIL</th>
-                                    <th>PRESENT_ADDRESS</th>
-                                    <th>PERMANENT_ADDRESS</th>
-                                    <th>INVEST DATE</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Present Address</th>
+                                    <th>permanent Address</th>
+                                    <th>Invest Date</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>

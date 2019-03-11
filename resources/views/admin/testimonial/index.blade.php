@@ -14,11 +14,11 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{route('admin.investment.create')}}" class="btn btn-primary">Add Investor</a>
+                        <a href="{{route('admin.testimonial.create')}}" class="btn btn-primary">Add Testimonial</a>
                         <br>
                         <br>
                         <div class="card-title-wrap bar-success">
-                            <h4 class="card-title">All Investor</h4>
+                            <h4 class="card-title">All Testimonial</h4>
                         </div>
                     </div>
                     <div class="card-body">

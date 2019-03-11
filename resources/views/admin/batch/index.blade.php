@@ -29,6 +29,7 @@
 
                                     <th>Course Name</th>
                                     <th>Batch Name</th>
+                                    <th>Total Student</th>
                                     <th>Starting Date</th>
                                     <th>Ending Date</th>
 
@@ -42,6 +43,7 @@
 
                                     <td>{{$batch->course->course_name}}</td>
                                     <td>{{$batch->batch_name}}</td>
+                                    <td>{{$batch->students->count()}}</td>
                                     <td>{{$batch->starting_date}}</td>
                                     <td>{{$batch->ending_date}}</td>
 

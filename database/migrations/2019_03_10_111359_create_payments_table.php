@@ -15,6 +15,13 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->increments('id');
+            $table->srting('bkash_trxtID')->nullable();
+            $table->srting('time')->nullable();
+            $table->srting('date')->nullable();
+            $table->srting('optional')->nullable();
+            $table->srting('optional1')->nullable();
+            $table->unsignedInteger('customer_id');
+            
             $table->timestamps();
         });
     }

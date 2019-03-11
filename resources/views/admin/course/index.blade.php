@@ -30,6 +30,7 @@
                                     <th>Course Name</th>
                                     <th>Total Class</th>
                                     <th>Total Hours</th>
+                                    <th>Total Student</th>
                                     <th>Price</th>
                                     <th>Actions</th>
                                 </tr>
@@ -41,6 +42,7 @@
                                     <td>{{$course->course_name}}</td>
                                     <td>{{$course->total_class}}</td>
                                     <td>{{$course->class_hour}}</td>
+                                    <td>{{$course->students->count()}}</td>
                                     <td>{{$course->price}}</td>
                                     <td>
                                         <a class="success p-0" data-original-title="" title="">

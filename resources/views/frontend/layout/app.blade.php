@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/stylesheet/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/stylesheet/responsive.css')}}">
-    <link href="{{asset('frontend/images/favicon.ico')}}" rel="shortcut icon">
+    <link href="{{asset('frontend/images/icon.png')}}" rel="shortcut icon">
     <style>
         @media (min-width: 576px) {
             .modal-dialog {
@@ -27,12 +27,12 @@
 <div class="top ">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-sm-12">
+         <div class="col-lg-8 col-sm-12">
                 <div class="flat-custom-info style1">
                     <ul class="custom-info">
                         <li class="datetime"><a href="#">Monday - Friday: 08 AM - 06 PM</a></li>
-                        <li class="phone"><a href="#">+88 445 677 9999</a></li>
-                        <li class="mail"><a href="#">support.buidup@gmail.com</a></li>
+                        <li class="phone"><a href="#">+88 01736952034</a></li>
+                        <li class="mail"><a href="#">email@gmail.com</a></li>
                     </ul>
                 </div><!-- /.flat-custom-info -->
             </div><!-- /.col-md-6 -->
@@ -41,12 +41,12 @@
                 <div class="flat-user-section style1 text-right">
 
                         <ul class="user-section">
-                            @if(!session('loggedMan'))
-                                <li class="login" data-toggle="modal" data-target="#exampleModalCenterLogin"><a style="cursor: pointer">Login</a></li>
+                           
+                                <li class="login" ><a href="{{route('login')}}"  style="cursor: pointer">Login</a></li>
                                 <li class="login" data-toggle="modal" data-target="#exampleModalCenter"><a style="cursor: pointer">Register</a></li>
-                                @else
-                                <li class="login" ><a href="{{route('destroyLoggedMan')}}">Logout</a></li>
-                            @endif
+                              
+                                
+                           
 
                         </ul>
 
@@ -119,9 +119,7 @@
                                 <div class="input-wrap-mail wrap-input">
                                     <input type="number" name="phone"  required="" placeholder="Phone Number">
                                 </div>
-                                <div class="input-wrap-mail wrap-input">
-                                    <input type="text" name="address" class="mail" required="" placeholder="Address">
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -156,19 +154,15 @@
         <div class="row" >
             <div class="col-md-12" >
                 <div class="header-wrap clearfix">
-                    <div id="logo">
-                        <a href="/"><img src="{{asset('frontend/images/logo.png')}}" alt="logo" width="128" height="26" data-retina="images/logo-2x.png" data-width="128" data-height="26"></a>
+                  <div id="logo">
+                        <a href="/"><span style="color: yellow; font-family: 'Playfair Display', serif; font-size: 25px">Design Artistry</span></a>
                     </div> <!-- /#logo -->
 
                     <div class="mobile-button">
                         <span></span>
                     </div>
 
-            @if(session('loggedMan'))
-                        <div class="btn-quote btn btn-styl2">
-                            <a href="{{route('liveChatPage')}}">Live Chat</a>
-                        </div>
-                    @endif
+           
 
                     <div class="nav-wrap">
                         <nav id="mainnav" class="mainnav">

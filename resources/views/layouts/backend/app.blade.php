@@ -10,11 +10,11 @@
     <meta name="keywords" content="admin template, Convex admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Design Artistry</title>
-    <link rel="apple-touch-icon" sizes="60x60" href="../backend/img/ico/apple-icon-76.html">
-    <link rel="apple-touch-icon" sizes="120x120" href="../backend/img/ico/apple-icon-120.html">
-    <link rel="apple-touch-icon" sizes="152x152" href="../backend/img/ico/apple-icon-152.html">
-    <link rel="shortcut icon" type="image/x-icon" href="https://pixinvent.com/demo/convex-bootstrap-admin-dashboard-template/app-assets/img/ico/favicon.ico">
-    <link rel="shortcut icon" type="image/png" href="../backend/img/ico/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{url('frontend/images/icon.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{url('frontend/images/icon.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href=".{{url('frontend/images/icon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url('frontend/images/icon.png')}}">
+    <link rel="shortcut icon" type="image/png" href="{{url('frontend/images/icon.png')}}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">

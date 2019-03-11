@@ -20,7 +20,7 @@
 
 
 <div class="container">
-    <div class="row" id="app">
+    <div class="row" id="app" style="margin-top: 15px">
         <div class="offset-12 col-sm-12 col-md-12">
             <li class="list-group-item active">Chat Room</li>
             <div class="badge badge-pill badge-primary">@{{typing}}</div>

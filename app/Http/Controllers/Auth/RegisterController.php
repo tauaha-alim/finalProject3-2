@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -28,13 +29,26 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/dashboard';
+    protected $redirectTo;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+        public function __construct()
+    {
+           if (Auth::check() && Auth::user()->role_id == 1){
+            $this->redirectTo = route('admin.dashboard');
+        }elseif(Auth::check() && Auth::user()->role_id == 2){
+            $this->redirectTo = route('customer.index');
+
+        }else{
+            $this->redirectTo = route('login');
+        }
+        $this->middleware('auth');
+
+    }
    
     /**
      * Get a validator for an incoming registration request.

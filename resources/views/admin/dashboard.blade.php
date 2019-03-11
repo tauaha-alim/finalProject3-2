@@ -3,7 +3,7 @@
 @endpush
 @section('content')
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-xl-4 col-lg-6 col-md-6 col-12">
           <div class="card bg-white">
             <div class="card-body">
@@ -62,8 +62,8 @@
           </div>
         </div>
       </div>
-      <!--Statistics cards Ends-->
-      <!--Line with Area Chart 1 Starts-->
+      Statistics cards Ends
+      Line with Area Chart 1 Starts
       <div class="row match-height">
         <div class="col-xl-8 col-lg-12 col-12">
           <div class="card">
@@ -146,7 +146,7 @@
           </div>
         </div>
       </div>
-      <!--Line with Area Chart 1 Ends-->
+      Line with Area Chart 1 Ends
       <div class="row match-height">
         <div class="col-xl-4 col-lg-12 col-12">
           <div class="card">
@@ -378,9 +378,9 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+          </div>
+        </div>
+      </div> -->
 @endsection
 @push('js')
 @endpush

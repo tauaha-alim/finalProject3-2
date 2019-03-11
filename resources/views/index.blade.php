@@ -6,93 +6,93 @@
 
 
 
-    <div class="flat-quote style1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-12">
-                    <h2>ENGINEERING YOUR DREAMS WITH US.</h2>
-                    <p>We construct buildings that define our time!</p>
-                </div> <!-- /.col-md-8 -->
-
-                <div class="col-md-4 col-12 text-right">
-                    <div class="btn-quote">
-                        <a href="#" class="btn btn-styl">GET A QUOTE</a>
-                    </div>
-                </div> <!-- /.col-md-4 -->
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /.flat-quote -->
-
-    <section class="flat-row flat-introduce">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="wrap-introduce">
-                        <div class="content-introduce">
-                            <h3 class="title"> <a href="#">We Are Always Ready To Help You</a></h3>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less</p>
-                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover</p>
-                            <div class="flat-row flat-counter style1">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-3 col-6">
-                                            <div class="counter style1">
-                                                <div class="content-counter">
-                                                    <div class="numb-count" data-from="0" data-to="90" data-speed="2000" data-inviewport="yes">90</div>
-                                                    <div class="name-count">Projects Completed</div>
-                                                </div>
-                                            </div><!-- /.flat-counter -->
-                                        </div>
-
-                                        <div class="col-md-3 col-6">
-                                            <div class="counter style1">
-                                                <div class="content-counter">
-                                                    <div class="numb-count"  data-from="0" data-to="20" data-speed="2000" data-inviewport="yes">50</div>
-                                                    <div class="name-count">Happy Clients</div>
-                                                </div>
-                                            </div><!-- /.flat-counter -->
-                                        </div><!-- /.col-md-3 -->
-
-                                        <div class="col-md-3 col-6">
-                                            <div class="counter style1">
-                                                <div class="content-counter">
-                                                    <div class="numb-count" data-from="0" data-to="50" data-speed="2000" data-inviewport="yes">15</div>
-                                                    <div class="name-count">Won Awards</div>
-                                                </div>
-                                            </div><!-- /.flat-counter -->
-                                        </div><!-- /.col-md-3 -->
-
-                                        <div class="col-md-3 col-6">
-                                            <div class="counter style1">
-                                                <div class="content-counter ">
-                                                    <div class="numb-count percent" data-from="0" data-to="240" data-speed="2000" data-inviewport="yes">240</div>
-                                                    <div class="name-count">Engineer Employers</div>
-                                                </div>
-                                            </div><!-- /.flat-counter -->
-                                        </div> <!-- /.col-md-3 -->
-                                    </div><!-- /.row -->
-                                </div><!-- /.container -->
-                            </div>
-                        </div> <!-- /.content-introduce -->
-
-                        <div class="wrap-experienced">
-                            <img src="{{asset('frontend/images/style1/bg_introduce.png')}}" alt="image">
-                            <div class="experienced text-center">
-                                <div class="counter style1">
-                                    <div class="content-counter">
-                                        <div class="numb-count numb-year font-rubik font-weight-700" data-from="0" data-to="20" data-speed="2000" data-inviewport="yes">20</div>
-                                    </div>
-                                </div> <!-- /.counter -->
-                                <div class="experienced-text mg-top-40">YEARS OF</div>
-                                <div class="experienced-text">EXPERIENCE</div>
-                                <div class="experienced-text">  IN THE INDUSTRY</div>
-                            </div>
-                        </div> <!-- /.wrap-experienced -->
-                    </div> <!-- /.wrap-introduce -->
-                </div> <!-- /.col-md-12 -->
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </section> <!-- /.flat-introduce -->
+  <!--   <div class="flat-quote style1">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-12">
+                  <h2>ENGINEERING YOUR DREAMS WITH US.</h2>
+                  <p>We construct buildings that define our time!</p>
+              </div> /.col-md-8
+  
+              <div class="col-md-4 col-12 text-right">
+                  <div class="btn-quote">
+                      <a href="#" class="btn btn-styl">GET A QUOTE</a>
+                  </div>
+              </div> /.col-md-4
+          </div> /.row
+      </div> /.container
+  </div> /.flat-quote
+   -->
+  <!--   <section class="flat-row flat-introduce">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="wrap-introduce">
+                      <div class="content-introduce">
+                          <h3 class="title"> <a href="#">We Are Always Ready To Help You</a></h3>
+                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less</p>
+                          <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover</p>
+                          <div class="flat-row flat-counter style1">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-md-3 col-6">
+                                          <div class="counter style1">
+                                              <div class="content-counter">
+                                                  <div class="numb-count" data-from="0" data-to="90" data-speed="2000" data-inviewport="yes">90</div>
+                                                  <div class="name-count">Projects Completed</div>
+                                              </div>
+                                          </div>/.flat-counter
+                                      </div>
+  
+                                      <div class="col-md-3 col-6">
+                                          <div class="counter style1">
+                                              <div class="content-counter">
+                                                  <div class="numb-count"  data-from="0" data-to="20" data-speed="2000" data-inviewport="yes">50</div>
+                                                  <div class="name-count">Happy Clients</div>
+                                              </div>
+                                          </div>/.flat-counter
+                                      </div>/.col-md-3
+  
+                                      <div class="col-md-3 col-6">
+                                          <div class="counter style1">
+                                              <div class="content-counter">
+                                                  <div class="numb-count" data-from="0" data-to="50" data-speed="2000" data-inviewport="yes">15</div>
+                                                  <div class="name-count">Won Awards</div>
+                                              </div>
+                                          </div>/.flat-counter
+                                      </div>/.col-md-3
+  
+                                      <div class="col-md-3 col-6">
+                                          <div class="counter style1">
+                                              <div class="content-counter ">
+                                                  <div class="numb-count percent" data-from="0" data-to="240" data-speed="2000" data-inviewport="yes">240</div>
+                                                  <div class="name-count">Engineer Employers</div>
+                                              </div>
+                                          </div>/.flat-counter
+                                      </div> /.col-md-3
+                                  </div>/.row
+                              </div>/.container
+                          </div>
+                      </div> /.content-introduce
+  
+                      <div class="wrap-experienced">
+                          <img src="{{asset('frontend/images/style1/bg_introduce.png')}}" alt="image">
+                          <div class="experienced text-center">
+                              <div class="counter style1">
+                                  <div class="content-counter">
+                                      <div class="numb-count numb-year font-rubik font-weight-700" data-from="0" data-to="20" data-speed="2000" data-inviewport="yes">20</div>
+                                  </div>
+                              </div> /.counter
+                              <div class="experienced-text mg-top-40">YEARS OF</div>
+                              <div class="experienced-text">EXPERIENCE</div>
+                              <div class="experienced-text">  IN THE INDUSTRY</div>
+                          </div>
+                      </div> /.wrap-experienced
+                  </div> /.wrap-introduce
+              </div> /.col-md-12
+          </div> /.row
+      </div> /.container
+  </section> /.flat-introduce -->
 
     <section class="flat-row flat-services style1">
         <div class="container">
@@ -388,14 +388,14 @@
         </div> <!-- /.themesflat-carousel-box -->
     </section> <!-- /.flat-projects -->
 
-    <section class="flat-row flat-blog ">
+    <!-- <section class="flat-row flat-blog ">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="flat-title">
                         <h2 class="title center-title">Latest Blogs</h2>
-                    </div> <!-- /.flat-title -->
-
+                    </div> /.flat-title
+    
                     <div class="themesflat-carousel-box data-effect clearfix" data-gap="27" data-column="3" data-column2="2" data-column3="1" data-dots= "false" data-auto="false">
                         <div class="owl-carousel">
                             <article class="post style1">
@@ -525,11 +525,11 @@
                                 </div>
                             </article>
                         </div>
-                    </div> <!-- /.themesflat-carousel-box -->
-                </div> <!-- /.col-md-12 -->
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </section> <!-- /.flat-blog -->
+                    </div> /.themesflat-carousel-box
+                </div> /.col-md-12
+            </div> /.row
+        </div> /.container
+    </section> /.flat-blog -->
 
     <section class="flat-testimonials parallax parallax1 style1 pd-top-80">
         <div class="overlay"></div>

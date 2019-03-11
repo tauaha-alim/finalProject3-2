@@ -24,7 +24,7 @@
                                 {!! Form::open(['route' => 'admin.testimonial.store', 'method' => 'POST','class'=>'form form-horizontal','files'=>true]) !!}
                                 <div class="form-body">
                                     <h4 class="form-section">
-                                        <i class="fa fa-book" aria-hidden="true"></i>Add Investor</h4>
+                                        <i class="fa fa-book" aria-hidden="true"></i>Add Testimonial</h4>
 
                                     <div class="form-group row">
                                         {{ Form::label('image', 'Upload Image',['class' => 'col-md-3 label-control']) }}

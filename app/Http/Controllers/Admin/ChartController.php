@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Project;
 use App\Student;
+use App\Investment;
 
 
 class ChartController extends Controller
@@ -303,6 +304,59 @@ else{
     }
 
 
+
+         public function investor_chart()
+    {
+     $months=['0'=>'01','1'=>'02','2'=>'03','3'=>'04','4'=>'05','5'=>'06','6'=>'07','7'=>'08','8'=>'09','9'=>'10','10'=>'11','11'=>'12'];
+     $year=date('Y');
+     $TransectionTrack=array();
+     $TransectionTrackIndex=0;
+
+     foreach ($months as $key => $value) {
+         $totalInvestmentTransection=Investment::
+       whereMonth('created_at', '=', $value)
+       ->whereYear('created_at', '=', $year)
+       ->sum('amount');
+       $TransectionTrack[$TransectionTrackIndex]=[
+        'month'=>$value,
+        'year'=>$year,
+        'amount'=>$totalInvestmentTransection
+       ];
+       $TransectionTrackIndex++;
+       
+     }
+     $title="Monthly Investment Amount ".$year;
+     return view('admin.chart.investor_chart')->with('TransectionTrack',$TransectionTrack)->with('title',$title)->with('year',$year);
+
+  
+    }
+
+
+       public function investor_chart_year($year)
+    {
+     $months=['0'=>'01','1'=>'02','2'=>'03','3'=>'04','4'=>'05','5'=>'06','6'=>'07','7'=>'08','8'=>'09','9'=>'10','10'=>'11','11'=>'12'];
+    
+     $TransectionTrack=array();
+     $TransectionTrackIndex=0;
+
+     foreach ($months as $key => $value) {
+         $totalInvestmentTransection=Investment::
+       whereMonth('created_at', '=', $value)
+       ->whereYear('created_at', '=', $year)
+       ->sum('amount');
+       $TransectionTrack[$TransectionTrackIndex]=[
+        'month'=>$value,
+        'year'=>$year,
+        'amount'=>$totalInvestmentTransection
+       ];
+       $TransectionTrackIndex++;
+       
+     }
+     $title="Monthly Investment Amount ".$year;
+     return view('admin.chart.investor_chart')->with('TransectionTrack',$TransectionTrack)->with('title',$title)->with('year',$year);
+
+  
+    }
 
 
         

@@ -24,7 +24,7 @@
                             {!! Form::open(['route' => ['admin.testimonial.update',$data->id], 'method' => 'PUT','class'=>'form form-horizontal','files'=>true]) !!}
                             <div class="form-body">
                                 <h4 class="form-section">
-                                    <i class="fa fa-book" aria-hidden="true"></i>Add Investor</h4>
+                                    <i class="fa fa-book" aria-hidden="true"></i>Update Testimonial</h4>
 
 
                                 <div class="row">

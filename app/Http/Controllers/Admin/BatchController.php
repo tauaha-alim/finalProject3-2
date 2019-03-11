@@ -42,13 +42,28 @@ class BatchController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'batch_name'=>'required|unique:batches',
+            'batch_name'=>'required',
             'starting_date'=>'required',
             'ending_date'=>'required',
             'course_id'=>'required'
 
 
         ]);
+
+       $class_name = $request->get('course_id');
+        $group_sub = $request->get('batch_name');
+
+
+        if($class_name!=null){
+            $routine = Batch::select('id')
+                ->where('course_id' , '=' , $class_name)
+                ->where('batch_name', '=', $group_sub)
+                ->get();
+            if(count($routine)>0){
+                return back()->withErrors(['batch_name'=>' Batch Already Token '])->withInput();
+            }
+
+        }
         $batches = new Batch();
         $batches->batch_name= $request->batch_name;
         $batches->starting_date = $request->starting_date;

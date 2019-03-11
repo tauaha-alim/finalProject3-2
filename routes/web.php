@@ -11,17 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('/',function (){
-    return view('index');
-})->name('index');
+//Route::get('/',function (){
+  //  return view('index');
+//})->name('index');
 
 
 Route::get('chatApps','ChatController@chat');
@@ -29,7 +28,7 @@ Route::post('send','ChatController@send');
 
 
 
-Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth']], function () {
+Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function () {
 
 	Route::get('/dashboard','DasboardController@dashboard')->name('dashboard');
     Route::resource('course','CourseController');
@@ -85,9 +84,40 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::get('/payment_chart', 'ChartController@student_chart')->name('student_chart');
     Route::get('/payment_chart/{year}', 'ChartController@student_chart_year');
 
+    
+     Route::get('/investment_chart', 'ChartController@investor_chart')->name('investor_chart');
+    Route::get('/investment_chart/{year}', 'ChartController@investor_chart_year');
+
 
 
 });
+Route::group(['as'=>'admin.','prefix'=>'admin','middleware'=>['auth','admin']], function () {
+    
+    Route::get('chatApps','ChatController@chat')->name('chatApps');
+    Route::post('send','ChatController@send')->name('send');
+   
+
+
+    });
+
+Route::group(['prefix'=>'admin','namespace'=>'Auth','middleware'=>['auth','admin']], function () {
+    
+    
+   
+         Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
+    Route::post('register', 'RegisterController@register');
+
+    });
+
+
+Route::group(['as'=>'customer.','prefix'=>'customer','middleware'=>['auth','customer']], function () {
+    Route::get('/customerlogged', 'HomeController@store')->name('index');
+        Route::get('chatApps','ChatController@chat')->name('chatApps');
+    Route::post('send','ChatController@send')->name('send');
+
+    });
+
+
 
 Route::resource('pages','PagesController');
 
@@ -95,4 +125,4 @@ Route::post('/passGate','PagesController@LoginPassGate')->name('loginPassGateRou
 
 Route::get('/destroyLoggedMan','PagesController@loggedManDestroy')->name('destroyLoggedMan');
 
-Route::get('/liveChatPage','PagesController@liveChatPage')->name('liveChatPage');
+//Route::get('/liveChatPage','PagesController@liveChatPage')->name('liveChatPage');

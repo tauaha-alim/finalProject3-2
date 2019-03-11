@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Customer;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -45,12 +45,13 @@ class PagesController extends Controller
     public function store(Request $request)
     {
 
-            $data = new Customer();
+            $data = new User();
 
+            $data->role_id = 2;
             $data->name = $request->name;
-            $data->username = $request->username;
+            
             $data->phone = $request->phone;
-            $data->address = $request->address;
+            
             $data->email = $request->email;
             $data->password = bcrypt($request->password);
 
@@ -66,7 +67,7 @@ class PagesController extends Controller
         $requestMail= $request->email;
         $requestPassword = $request->password;
 
-        $user = Customer::where('email', '=', $requestMail)->first();
+        $user = User::where('email', '=', $requestMail)->first();
 
         if($user){
             if(Hash::check($requestPassword, $user->password) && $user->email == $requestMail){
