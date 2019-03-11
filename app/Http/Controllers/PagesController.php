@@ -56,7 +56,7 @@ class PagesController extends Controller
             $data->password = bcrypt($request->password);
 
             $data->save();
-            return redirect()->back()->with('success','success');
+            return redirect()->route('login')->with('success','success');
 
 
     }
