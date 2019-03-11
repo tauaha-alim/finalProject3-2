@@ -106,10 +106,7 @@
                                 <div class="input-wrap-name wrap-input">
                                     <input type="text" class="name" name="name" required="" placeholder="Your Name">
                                 </div>
-                                <div class="input-wrap-mail wrap-input">
-                                    <input type="text" name="username" required="" placeholder="Username">
-                                </div>
-
+                                
                                 <div class="input-wrap-mail wrap-input">
                                     <input type="password" name="password" required="" placeholder="Enter Password">
                                 </div>
