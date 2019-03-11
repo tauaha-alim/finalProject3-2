@@ -152,7 +152,7 @@
             <div class="col-md-12" >
                 <div class="header-wrap clearfix">
                   <div id="logo">
-                        <a href="/"><span style="color: yellow; font-family: 'Playfair Display', serif; font-size: 25px">Design Artistry</span></a>
+                        <a href="/"><span style="color: #e1a421; font-family: 'Playfair Display', serif; font-size: 25px">Design Artistry</span></a>
                     </div> <!-- /#logo -->
 
                     <div class="mobile-button">

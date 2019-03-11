@@ -24,7 +24,7 @@
                                 {!! Form::open(['route' => 'admin.project.store', 'method' => 'POST','class'=>'form form-horizontal']) !!}
                                 <div class="form-body">
                                     <h4 class="form-section">
-                                        <i class="fa fa-book" aria-hidden="true"></i>Add Investor</h4>
+                                        <i class="fa fa-book" aria-hidden="true"></i>Add Project</h4>
 
 
                                     <div class="form-group row">
