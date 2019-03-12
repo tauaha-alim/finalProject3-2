@@ -322,14 +322,16 @@
 
                                     <div class="col-6">
                                         <div class="form-group">
-                                            {{ Form::label('payment', 'Payment') }}
+                                           
+
+                                            {{ Form::label('amount', 'amount') }}
 
 
-                                            {{ Form::number('payment',null, array('class' => 'form-control','required'=>'','placeholder'=>'Payment')) }}
+                                            {{ Form::number('amount',null, array('class' => 'form-control','required'=>'','placeholder'=>'Payment')) }}
 
                                             @if (count($errors) > 0)
                                                 <span style="color:red">
-                                                       {!! $errors->first('payment') !!}
+                                                       {!! $errors->first('amount') !!}
 
 
                                                 </span>

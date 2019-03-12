@@ -43,7 +43,6 @@ return array(
     'App\\Investment' => $baseDir . '/app/Investment.php',
     'App\\Listeners\\ChatListener' => $baseDir . '/app/Listeners/ChatListener.php',
     'App\\Overview' => $baseDir . '/app/Overview.php',
-    'App\\Payment' => $baseDir . '/app/Payment.php',
     'App\\Project' => $baseDir . '/app/Project.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

@@ -486,7 +486,6 @@ class ComposerStaticInit4ac5c1977174d3e0b85894a485c114fc
         'App\\Investment' => __DIR__ . '/../..' . '/app/Investment.php',
         'App\\Listeners\\ChatListener' => __DIR__ . '/../..' . '/app/Listeners/ChatListener.php',
         'App\\Overview' => __DIR__ . '/../..' . '/app/Overview.php',
-        'App\\Payment' => __DIR__ . '/../..' . '/app/Payment.php',
         'App\\Project' => __DIR__ . '/../..' . '/app/Project.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

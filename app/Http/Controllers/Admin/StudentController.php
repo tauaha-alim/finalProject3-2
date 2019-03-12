@@ -169,7 +169,7 @@ class StudentController extends Controller
             'institute'       => 'required',
             'national_id'       => 'required',
             'guardians_phone'       => 'required|regex:/(01)[0-9]{9}/',
-            'payment'       => 'required|integer',
+            'amount'       => 'required|integer',
             'course'    => 'required',
             'batch'    => 'required'
 
@@ -200,6 +200,7 @@ class StudentController extends Controller
             $imagename = $student->image;
         }
 
+
         $DataExist4 =Student::select('id')
             ->where('email', '=', $request->get('email'))
             ->where('id', '!=', $id)
@@ -215,6 +216,27 @@ class StudentController extends Controller
         if(count($DataExist5)>0){
             return back()->withErrors(['phone'=>'This  phone number is taken'])->withInput();
         }
+        $DataExist6 =Course::select('id')
+        ->where('price', '<', $request->get('amount'))
+
+        ->get();
+
+        if(count($DataExist6)>0){
+            return back()->withErrors(['amount'=>'Not Over The Total Amount'])->withInput();
+        }
+
+         $payment = $student->amount;
+        $DataExist6 =Course::select('id')
+            ->where('price', '<', $payment)
+
+            ->get();
+
+        if(count($DataExist6)>0){
+            return back()->withErrors(['amount'=>'Payment Not Allowed in Course'])->withInput();
+        }
+
+
+
         $student->student_name = $request->student_name;
         $student->course_id = $request->course;
         $student->batch_id = $request->batch;
@@ -232,7 +254,7 @@ class StudentController extends Controller
         $student->institute = $request->institute;
         $student->national_id = $request->national_id;
         $student->guardians_phone = $request->guardians_phone;
-        $student->amount = $request->payment;
+        $student->amount = $request->amount + $student->amount;
         $student->image = $imagename;
         $student->save();
         $notification = array(
