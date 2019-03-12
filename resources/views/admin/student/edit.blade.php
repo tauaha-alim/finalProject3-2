@@ -323,11 +323,11 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                            @php
-                                               $payment = $course->price - $student->amount;
+                                               $payment = $student->course->price - $student->amount;
 
                                            @endphp
 
-                                            {{ Form::label('amount', 'amount') }} 
+                                            {{ Form::label('amount', 'Due') }} (Payment  {{$student->amount}} TK)
 
 
                                             {{ Form::number('amount',$payment, array('class' => 'form-control','required'=>'','placeholder'=>'Payment')) }}

@@ -141,7 +141,7 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
         $courses = Course::pluck("course_name","id");
-        $course = Course::find($id);
+        
         return view('admin.student.edit',compact('student','courses','course'));
     }
 
@@ -225,8 +225,9 @@ class StudentController extends Controller
         if(count($DataExist6)>0){
             return back()->withErrors(['amount'=>'Not Over The Total Amount'])->withInput();
         }
+        $due =  $request->get('amount');
 
-         $payment = $student->amount;
+         $payment = $student->amount + $due;
         $DataExist6 =Course::select('id')
             ->where('price', '<', $payment)
 
