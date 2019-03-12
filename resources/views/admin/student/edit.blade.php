@@ -322,12 +322,15 @@
 
                                     <div class="col-6">
                                         <div class="form-group">
-                                           
+                                           @php
+                                               $payment = $course->price - $student->amount;
 
-                                            {{ Form::label('amount', 'amount') }}
+                                           @endphp
+
+                                            {{ Form::label('amount', 'amount') }} 
 
 
-                                            {{ Form::number('amount',null, array('class' => 'form-control','required'=>'','placeholder'=>'Payment')) }}
+                                            {{ Form::number('amount',$payment, array('class' => 'form-control','required'=>'','placeholder'=>'Payment')) }}
 
                                             @if (count($errors) > 0)
                                                 <span style="color:red">

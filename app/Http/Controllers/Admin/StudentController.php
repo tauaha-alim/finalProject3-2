@@ -141,7 +141,8 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
         $courses = Course::pluck("course_name","id");
-        return view('admin.student.edit',compact('student','courses'));
+        $course = Course::find($id);
+        return view('admin.student.edit',compact('student','courses','course'));
     }
 
     /**
